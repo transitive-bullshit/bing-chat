@@ -14,7 +14,9 @@
 - [License](#license)
 
 <p align="center">
-  <img alt="Example conversation" src="/media/demo.gif" width="441">
+  <p>
+    <img alt="Example conversation" src="/media/demo.gif" width="600">
+  </p>
   <i>(30s conversation demo)</i>
 </p>
 
