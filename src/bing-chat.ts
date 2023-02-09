@@ -1,6 +1,5 @@
 import crypto from 'node:crypto'
 
-import { v4 as uuidv4 } from 'uuid'
 import WebSocket from 'ws'
 
 import * as types from './types'
@@ -69,7 +68,7 @@ export class BingChat {
 
     const result: types.ChatMessage = {
       author: 'bot',
-      id: uuidv4(),
+      id: crypto.randomUUID(),
       conversationId,
       clientId,
       conversationSignature,
@@ -258,7 +257,7 @@ export class BingChat {
   }
 
   async createConversation(): Promise<types.ConversationResult> {
-    const requestId = uuidv4()
+    const requestId = crypto.randomUUID()
 
     const cookie = this._cookie.includes(';')
       ? this._cookie
