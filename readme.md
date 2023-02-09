@@ -4,18 +4,19 @@
 
 [![NPM](https://img.shields.io/npm/v/bing-chat.svg)](https://www.npmjs.com/package/bing-chat) [![Build Status](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/transitive-bullshit/bing-chat/blob/main/license) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
-<p align="center">
-  <img alt="Example conversation" src="/media/demo.gif">
-  <i>(30s conversation demo)</i>
-</p>
-
 - [Intro](#intro)
 - [Install](#install)
 - [Usage](#usage)
 - [Projects](#projects)
 - [Compatibility](#compatibility)
+- [Credit](#credit)
 - [Related](#related)
 - [License](#license)
+
+<p align="center">
+  <img alt="Example conversation" src="/media/demo.gif" width="441">
+  <i>(30s conversation demo)</i>
+</p>
 
 ## Intro
 
@@ -78,9 +79,14 @@ If you create a cool integration, feel free to open a PR and add it to the list.
 - This module assumes that `fetch` is installed globally.
 - If you want to build a website using `bing-chat`, we recommend using it only from your backend API
 
+## Credit
+
+- Thanks to [waylaidwanderer](https://github.com/waylaidwanderer) and [canfam](https://github.com/canfam) for helping to reverse-engineer the API 💪
+
 ## Related
 
 - [chatgpt](https://github.com/transitive-bullshit/chatgpt-api) - Node.js client for the unofficial ChatGPT API. Same author as this package, and a very similar API format.
+- [discord](https://discord.gg/v9gERj825w) - Join our discord server for hackers building on top of ChatGPT / Bing / LLMs.
 
 ## License
 
