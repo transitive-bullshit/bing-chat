@@ -17,7 +17,7 @@ export class BingChat {
     /** @defaultValue `false` **/
     debug?: boolean
   }) {
-    const { cookie, clientId, conversationId, conversationSignature, debug = false } = opts
+    const { cookie, debug = false } = opts
 
     this._cookie = cookie
     this._debug = !!debug
