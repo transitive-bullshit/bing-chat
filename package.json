@@ -1,6 +1,6 @@
 {
   "name": "bing-chat",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Node.js client for the unofficial Bing Chat API.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "repository": "transitive-bullshit/bing-chat",
@@ -35,7 +35,6 @@
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check"
   },
   "dependencies": {
-    "uuid": "^9.0.0",
     "ws": "^8.12.0"
   },
   "devDependencies": {
