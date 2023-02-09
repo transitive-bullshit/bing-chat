@@ -35,7 +35,6 @@
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check"
   },
   "dependencies": {
-    "uuid": "^9.0.0",
     "ws": "^8.12.0"
   },
   "devDependencies": {
