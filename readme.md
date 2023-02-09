@@ -1,6 +1,6 @@
 # Bing Chat API <!-- omit in toc -->
 
-> Node.js client for the unofficial Bing Chat API.
+> Node.js client for the unofficial Bing Chat API. It's like ChatGPT on steroids 🔥
 
 [![NPM](https://img.shields.io/npm/v/bing-chat.svg)](https://www.npmjs.com/package/bing-chat) [![Build Status](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/transitive-bullshit/bing-chat/blob/main/license) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
