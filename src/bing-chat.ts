@@ -18,13 +18,13 @@ export class BingChat {
     /** @defaultValue `false` **/
     debug?: boolean
   }) {
-    const { cookie, debug = false } = opts
+    const { cookie, clientId, conversationId, conversationSignature, debug = false } = opts
 
     this._cookie = cookie
     this._debug = !!debug
 
     if (!this._cookie) {
-      throw new Error('Bing cookie is required')
+      throw new Error('Bing cookie or Id/Sig combo is required!')
     }
   }
 
@@ -61,10 +61,17 @@ export class BingChat {
     )
 
     if (isStartOfSession) {
-      const conversation = await this.createConversation()
-      conversationId = conversation.conversationId
-      clientId = conversation.clientId
-      conversationSignature = conversation.conversationSignature
+      if (this._cookie.substring(0,3) === "_U=") {
+        const conversation = await this.createConversation()
+        conversationId = conversation.conversationId
+        clientId = conversation.clientId
+        conversationSignature = conversation.conversationSignature
+      } else {
+        let session = this._cookie.split(";")
+        clientId = session[0]
+        conversationId = session[1]
+        conversationSignature = session[2]
+      }
     }
 
     const result: types.ChatMessage = {

@@ -39,8 +39,16 @@ Make sure you're using `node >= 18` so `fetch` is available.
 ## Usage
 
 **You need access to Bing Chat OR a valid cookie from someone who has access**.
+**You may also use a Session ID along with a Conversation ID and Signature**. 
 
 The cookie you need from Bing is the `_U` cookie (or just all of the cookies concatenated together; both will work).
+
+If using the two IDs and a Signature parameters set the variable as follows:
+```
+BING_COOKIE="{sessionId};{conversationId};{conversationSignature}"
+```
+**These values will need to be updated for each new conversation!**
+
 
 ```ts
 import { BingChat } from 'bing-chat'
