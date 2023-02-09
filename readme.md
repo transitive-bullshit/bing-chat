@@ -5,6 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/bing-chat.svg)](https://www.npmjs.com/package/bing-chat) [![Build Status](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/transitive-bullshit/bing-chat/blob/main/license) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 - [Intro](#intro)
+- [Demo](#demo)
 - [Install](#install)
 - [Usage](#usage)
 - [Projects](#projects)
@@ -13,19 +14,19 @@
 - [Related](#related)
 - [License](#license)
 
-<p align="center">
-  <p>
-    <img alt="Example conversation" src="/media/demo.gif" width="600">
-  </p>
-  <i>(30s conversation demo)</i>
-</p>
-
 ## Intro
 
 This package is a Node.js wrapper around Bing Chat by Microsoft. TS batteries included. ✨
 
 > **Warning**
 > This package is a reverse-engineered hack. I do not expect it to continue working long-term, and it is not meant for use in production. I'm building this in public, and you can follow the progress on Twitter [@transitive_bs](https://twitter.com/transitive_bs).
+
+## Demo
+
+<p align="center">
+  <img alt="Example conversation" src="/media/demo.gif">
+  <i>(30s conversation demo)</i>
+</p>
 
 ## Install
 
