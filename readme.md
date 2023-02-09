@@ -88,7 +88,7 @@ If you create a cool integration, feel free to open a PR and add it to the list.
 
 ## Related
 
-- [chatgpt](https://github.com/transitive-bullshit/chatgpt-api) - Node.js client for the unofficial ChatGPT API. Same author as this package, and a very similar API format.
+- [chatgpt](https://github.com/transitive-bullshit/chatgpt-api) - Node.js client for the unofficial ChatGPT API. Same author as this package.
 - [discord](https://discord.gg/v9gERj825w) - Join our discord server for hackers building on top of ChatGPT / Bing / LLMs.
 
 ## License
