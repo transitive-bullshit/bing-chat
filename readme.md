@@ -38,7 +38,9 @@ Make sure you're using `node >= 18` so `fetch` is available.
 
 ## Usage
 
-You need access to Bing Chat OR a valid cookie from someone who has access. The cookie you need is the `_U` cookie (or just all of the cookies concatenated together; both will work).
+**You need access to Bing Chat OR a valid cookie from someone who has access**.
+
+The cookie you need from Bing is the `_U` cookie (or just all of the cookies concatenated together; both will work).
 
 ```ts
 import { BingChat } from 'bing-chat'
