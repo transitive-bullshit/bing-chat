@@ -5,7 +5,7 @@
 [![NPM](https://img.shields.io/npm/v/bing-chat.svg)](https://www.npmjs.com/package/bing-chat) [![Build Status](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml/badge.svg)](https://github.com/transitive-bullshit/bing-chat/actions/workflows/test.yml) [![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/transitive-bullshit/bing-chat/blob/main/license) [![Prettier Code Formatting](https://img.shields.io/badge/code_style-prettier-brightgreen.svg)](https://prettier.io)
 
 <p align="center">
-  <video src="https://user-images.githubusercontent.com/552829/217770725-c28c8d2c-739a-4f5b-8853-6edca1816dc7.mp4"></video>
+  <img alt="Example conversation" src="/media/demo.gif">
   <i>(30s conversation demo)</i>
 </p>
 
