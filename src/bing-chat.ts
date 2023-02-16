@@ -1,9 +1,9 @@
 import crypto from 'node:crypto'
 
+import fetch, { RequestInit } from 'node-fetch'
 import WebSocket from 'ws'
 
 import * as types from './types'
-import { fetch } from './fetch'
 
 const terminalChar = ''
 
@@ -206,7 +206,7 @@ export class BingChat {
 
               if (!msg.messageType) {
                 result.author = msg.author
-                result.text = msg.text
+                result.text = msg.text.replace(/\[\^\d\^\]/g, '')
                 result.detail = msg
 
                 onProgress?.(result)
@@ -227,7 +227,7 @@ export class BingChat {
                   response.item.conversationExpiryTime
 
                 result.author = lastMessage.author
-                result.text = lastMessage.text
+                result.text = lastMessage.text.replace(/\[\^\d\^\]/g, '')
                 result.detail = lastMessage
 
                 if (!isFulfilled) {
@@ -263,7 +263,8 @@ export class BingChat {
       ? this._cookie
       : `_U=${this._cookie}`
 
-    return fetch('https://www.bing.com/turing/conversation/create', {
+    return await fetch('https://www.bing.com/turing/conversation/create', {
+      method: 'GET',
       headers: {
         accept: 'application/json',
         'accept-language': 'en-US,en;q=0.9',
@@ -290,13 +291,10 @@ export class BingChat {
       },
       referrer: 'https://www.bing.com/search',
       referrerPolicy: 'origin-when-cross-origin',
-      body: null,
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include'
+      body: null
     }).then((res) => {
       if (res.ok) {
-        return res.json()
+        return res.json() as any
       } else {
         throw new Error(
           `unexpected HTTP error createConversation ${res.status}: ${res.statusText}`

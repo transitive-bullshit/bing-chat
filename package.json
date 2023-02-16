@@ -35,6 +35,7 @@
     "test:prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check"
   },
   "dependencies": {
+    "node-fetch": "^3.3.0",
     "ws": "^8.12.0"
   },
   "devDependencies": {
