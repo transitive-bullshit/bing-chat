@@ -1,6 +1,6 @@
 import crypto from 'node:crypto'
 
-import fetch, { RequestInit } from 'node-fetch'
+import fetch from 'node-fetch'
 import WebSocket from 'ws'
 
 import * as types from './types'
