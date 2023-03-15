@@ -200,7 +200,9 @@ export class BingChat {
 
             if (message.type === 1) {
               const update = message as types.ChatUpdate
-              const msg = update.arguments[0].messages[0]
+              const msg = update.arguments[0].messages?.[0]
+
+              if (!msg) continue
 
               // console.log('RESPONSE0', JSON.stringify(update, null, 2))
 
