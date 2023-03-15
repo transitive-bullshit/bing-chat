@@ -49,7 +49,8 @@ export class BingChat {
       locale = 'en-US',
       market = 'en-US',
       region = 'US',
-      location
+      location,
+      messageType = 'Chat'
     } = opts
 
     let { conversationId, clientId, conversationSignature } = opts
@@ -172,7 +173,7 @@ export class BingChat {
                     location: locationStr,
                     author: 'user',
                     inputMethod: 'Keyboard',
-                    messageType: 'Chat',
+                    messageType,
                     text
                   },
                   conversationSignature,
@@ -200,7 +201,9 @@ export class BingChat {
 
             if (message.type === 1) {
               const update = message as types.ChatUpdate
-              const msg = update.arguments[0].messages[0]
+              const msg = update.arguments[0].messages?.[0]
+
+              if (!msg) continue
 
               // console.log('RESPONSE0', JSON.stringify(update, null, 2))
 
