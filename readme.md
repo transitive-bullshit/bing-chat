@@ -73,6 +73,15 @@ console.log(res.text)
 
 See `demos/demo-on-progress.ts` for a full example of streaming support.
 
+You can also add the the parameter `variant` to the `sendMessage` function to change the variant of the AI. The default is `Balanced`, but you can also use `Precise` or `Creative`.
+
+```ts
+const res = await api.sendMessage('Write a 500 word essay on frogs.', {
+  // change the variant to 'Precise'
+  variant: 'Creative'
+})
+```
+
 ## Projects
 
 If you create a cool integration, feel free to open a PR and add it to the list.
