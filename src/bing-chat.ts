@@ -49,7 +49,8 @@ export class BingChat {
       locale = 'en-US',
       market = 'en-US',
       region = 'US',
-      location
+      location,
+      messageType = 'Chat'
     } = opts
 
     let { conversationId, clientId, conversationSignature } = opts
@@ -172,7 +173,7 @@ export class BingChat {
                     location: locationStr,
                     author: 'user',
                     inputMethod: 'Keyboard',
-                    messageType: 'Chat',
+                    messageType,
                     text
                   },
                   conversationSignature,
