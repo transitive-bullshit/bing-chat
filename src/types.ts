@@ -33,6 +33,8 @@ export interface ChatMessage {
   variant?: string
 
   detail?: ChatMessageFull | ChatMessagePartial
+
+  isFulfilled: boolean
 }
 
 export interface ConversationResult {
