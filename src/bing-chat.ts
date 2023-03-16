@@ -49,7 +49,9 @@ export class BingChat {
       locale = 'en-US',
       market = 'en-US',
       region = 'US',
-      location
+      location,
+      messageType = 'Chat',
+      variant = 'Balanced'
     } = opts
 
     let { conversationId, clientId, conversationSignature } = opts
@@ -140,18 +142,30 @@ export class BingChat {
                 };`
               : undefined
 
+            // Sets the correct options for the variant of the model
+            const optionsSets = [
+              'nlu_direct_response_filter',
+              'deepleo',
+              'enable_debug_commands',
+              'disable_emoji_spoken_text',
+              'responsible_ai_policy_235',
+              'enablemm'
+            ]
+            if (variant == 'Balanced') {
+              optionsSets.push('galileo')
+            } else {
+              optionsSets.push('clgalileo')
+              if (variant == 'Creative') {
+                optionsSets.push('h3imaginative')
+              } else if (variant == 'Precise') {
+                optionsSets.push('h3precise')
+              }
+            }
             const params = {
               arguments: [
                 {
                   source: 'cib',
-                  optionsSets: [
-                    'nlu_direct_response_filter',
-                    'deepleo',
-                    'enable_debug_commands',
-                    'disable_emoji_spoken_text',
-                    'responsible_ai_policy_235',
-                    'enablemm'
-                  ],
+                  optionsSets,
                   allowedMessageTypes: [
                     'Chat',
                     'InternalSearchQuery',
@@ -171,7 +185,7 @@ export class BingChat {
                     location: locationStr,
                     author: 'user',
                     inputMethod: 'Keyboard',
-                    messageType: 'Chat',
+                    messageType,
                     text
                   },
                   conversationSignature,

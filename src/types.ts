@@ -5,6 +5,8 @@ export type SendMessageOptions = {
   clientId?: string
   conversationSignature?: string
   invocationId?: string
+  messageType?: string
+  variant?: string
   locale?: string
   market?: string
   region?: string
@@ -27,6 +29,8 @@ export interface ChatMessage {
   conversationSignature: string
   conversationExpiryTime?: string
   invocationId?: string
+  messageType?: string
+  variant?: string
 
   detail?: ChatMessageFull | ChatMessagePartial
 

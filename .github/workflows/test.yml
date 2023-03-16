@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version:
-          - 19
+          - 19.7
           - 18
 
     steps:
@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v3.3.0
         with:
           node-version: ${{ matrix.node-version }}
 
