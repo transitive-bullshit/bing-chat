@@ -73,7 +73,8 @@ export class BingChat {
       clientId,
       conversationSignature,
       invocationId: `${parseInt(invocationId, 10) + 1}`,
-      text: ''
+      text: '',
+      isFulfilled: false
     }
 
     const responseP = new Promise<types.ChatMessage>(
@@ -88,8 +89,6 @@ export class BingChat {
           }
         })
 
-        let isFulfilled = false
-
         function cleanup() {
           ws.close()
           ws.removeAllListeners()
@@ -98,13 +97,13 @@ export class BingChat {
         ws.on('error', (error) => {
           console.warn('WebSocket error:', error)
           cleanup()
-          if (!isFulfilled) {
-            isFulfilled = true
+          if (!result.isFulfilled) {
+            result.isFulfilled = true
             reject(new Error(`WebSocket error: ${error.toString()}`))
           }
         })
         ws.on('close', () => {
-          // TODO
+          resolve(result)
         })
 
         ws.on('open', () => {
@@ -232,19 +231,24 @@ export class BingChat {
                 result.text = lastMessage.text
                 result.detail = lastMessage
 
-                if (!isFulfilled) {
-                  isFulfilled = true
+                if (!result.isFulfilled) {
+                  result.isFulfilled = true
                   resolve(result)
                 }
               }
             } else if (message.type === 3) {
-              if (!isFulfilled) {
-                isFulfilled = true
+              if (!result.isFulfilled) {
+                result.isFulfilled = true
                 resolve(result)
               }
 
               cleanup()
               return
+            } else if (message.type === 7) {
+              resolve({
+                ...result,
+                isFulfilled: false
+              })
             } else {
               // TODO: handle other message types
               // these may be for displaying "adaptive cards"

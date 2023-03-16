@@ -29,6 +29,8 @@ export interface ChatMessage {
   invocationId?: string
 
   detail?: ChatMessageFull | ChatMessagePartial
+
+  isFulfilled: boolean
 }
 
 export interface ConversationResult {
