@@ -153,15 +153,12 @@ export class BingChat {
               'enablemm'
             ]
             if (variant == 'Balanced') {
-              optionsSets.push('galileo')
-            } else {
-              optionsSets.push('clgalileo')
-              if (variant == 'Creative') {
-                optionsSets.push('h3imaginative')
-              } else if (variant == 'Precise') {
-                optionsSets.push('h3precise')
-              }
-            }
+              optionsSets.push('harmonyv3')
+						} else if (variant == 'Creative') {
+							optionsSets.push('h3relaxedimg')
+						} else if (variant == 'Precise') {
+							optionsSets.push('h3precise')
+						}
             const params = {
               arguments: [
                 {
