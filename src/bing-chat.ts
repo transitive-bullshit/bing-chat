@@ -150,15 +150,22 @@ export class BingChat {
               'enable_debug_commands',
               'disable_emoji_spoken_text',
               'responsible_ai_policy_235',
-              'enablemm'
+              'enablemm',
+              'trffovrd',
+              'h3toppfp3',
+              'forcerep',
+              'cpcttl1d',
+              'dv3sugg'
             ]
             if (variant == 'Balanced') {
-              optionsSets.push('harmonyv3')
-						} else if (variant == 'Creative') {
-							optionsSets.push('h3relaxedimg')
-						} else if (variant == 'Precise') {
-							optionsSets.push('h3precise')
-						}
+              optionsSets.push('galileo')
+              optionsSets.push('glprompt')
+            } else if (variant == 'Creative') {
+              optionsSets.push('h3imaginative')
+              optionsSets.push('gencontentv3')
+            } else if (variant == 'Precise') {
+              optionsSets.push('h3precise')
+            }
             const params = {
               arguments: [
                 {
