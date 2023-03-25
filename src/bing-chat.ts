@@ -306,6 +306,7 @@ export class BingChat {
         'x-ms-client-request-id': requestId,
         'x-ms-useragent':
           'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.10.0 OS/MacIntel',
+        'x-forwarded-for': '1.1.1.1',
         cookie
       },
       referrer: 'https://www.bing.com/search',
