@@ -7,6 +7,14 @@ import { fetch } from './fetch'
 
 const terminalChar = ''
 
+// Bypass restricted countries, such as China.
+function random(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// https://github.com/acheong08/EdgeGPT/blob/master/src/EdgeGPT.py#L38
+const randomIP = `13.${random(104, 107)}.${random(0, 255)}.${random(0, 255)}`
+
 export class BingChat {
   protected _cookie: string
   protected _debug: boolean
@@ -86,7 +94,8 @@ export class BingChat {
           headers: {
             'accept-language': 'en-US,en;q=0.9',
             'cache-control': 'no-cache',
-            pragma: 'no-cache'
+            pragma: 'no-cache',
+            'x-forwarded-for': randomIP,
           }
         })
 
@@ -302,6 +311,7 @@ export class BingChat {
         'x-ms-client-request-id': requestId,
         'x-ms-useragent':
           'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.10.0 OS/MacIntel',
+        'x-forwarded-for': randomIP,
         cookie
       },
       referrer: 'https://www.bing.com/search',
