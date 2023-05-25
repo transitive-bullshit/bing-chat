@@ -150,17 +150,21 @@ export class BingChat {
               'enable_debug_commands',
               'disable_emoji_spoken_text',
               'responsible_ai_policy_235',
-              'enablemm'
+              'enablemm',
+              'trffovrd',
+              'h3toppfp3',
+              'forcerep',
+              'cpcttl1d',
+              'dv3sugg'
             ]
             if (variant == 'Balanced') {
               optionsSets.push('galileo')
-            } else {
-              optionsSets.push('clgalileo')
-              if (variant == 'Creative') {
-                optionsSets.push('h3imaginative')
-              } else if (variant == 'Precise') {
-                optionsSets.push('h3precise')
-              }
+              optionsSets.push('glprompt')
+            } else if (variant == 'Creative') {
+              optionsSets.push('h3imaginative')
+              optionsSets.push('gencontentv3')
+            } else if (variant == 'Precise') {
+              optionsSets.push('h3precise')
             }
             const params = {
               arguments: [
@@ -275,9 +279,9 @@ export class BingChat {
   async createConversation(): Promise<types.ConversationResult> {
     const requestId = crypto.randomUUID()
 
-    const cookie = this._cookie.includes(';')
-      ? this._cookie
-      : `_U=${this._cookie}`
+    const cookie =
+      (this._cookie.includes(';') ? this._cookie : `_U=${this._cookie}`) +
+      `;SRCHHPGUSR=HV=${Math.round(new Date().getTime() / 1e3)}`
 
     return fetch('https://www.bing.com/turing/conversation/create', {
       headers: {
@@ -302,6 +306,7 @@ export class BingChat {
         'x-ms-client-request-id': requestId,
         'x-ms-useragent':
           'azsdk-js-api-client-factory/1.0.0-beta.1 core-rest-pipeline/1.10.0 OS/MacIntel',
+        'x-forwarded-for': '1.1.1.1',
         cookie
       },
       referrer: 'https://www.bing.com/search',
