@@ -279,9 +279,9 @@ export class BingChat {
   async createConversation(): Promise<types.ConversationResult> {
     const requestId = crypto.randomUUID()
 
-    const cookie = this._cookie.includes(';')
-      ? this._cookie
-      : `_U=${this._cookie}`
+    const cookie =
+      (this._cookie.includes(';') ? this._cookie : `_U=${this._cookie}`) +
+      `;SRCHHPGUSR=HV=${Math.round(new Date().getTime() / 1e3)}`
 
     return fetch('https://www.bing.com/turing/conversation/create', {
       headers: {
