@@ -1,6 +1,6 @@
 {
-  "name": "bing-chat",
-  "version": "0.2.3",
+  "name": "bing-chat-rn",
+  "version": "0.2.4",
   "description": "Node.js client for the unofficial Bing Chat API.",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "repository": "transitive-bullshit/bing-chat",
@@ -51,7 +51,7 @@
     "prettier": "^2.8.4",
     "tsup": "^6.6.3",
     "tsx": "^3.12.5",
-    "typedoc": "^0.23.26",
+    "typedoc": "^0.24.0",
     "typedoc-plugin-markdown": "^3.13.6",
     "typescript": "^4.9.3"
   },
