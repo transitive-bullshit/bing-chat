@@ -80,7 +80,9 @@ export class BingChat {
 
     const responseP = new Promise<types.ChatMessage>(
       async (resolve, reject) => {
-        const chatWebsocketUrl = `wss://sydney.bing.com/sydney/ChatHub?sec_access_token=${encodeURIComponent(conversationSignature)}`
+        const chatWebsocketUrl = `wss://sydney.bing.com/sydney/ChatHub?sec_access_token=${encodeURIComponent(
+          conversationSignature
+        )}`
         const ws = new WebSocket(chatWebsocketUrl, {
           perMessageDeflate: false,
           headers: {
@@ -159,13 +161,12 @@ export class BingChat {
             ]
             if (variant == 'Balanced') {
               optionsSets.push('galileo')
-              optionsSets.push("glprompt");
-            } else if (variant == "Creative") {
-              optionsSets.push("h3imaginative");
-              optionsSets.push("gencontentv3");
-              } else if (variant == 'Precise') {
-                optionsSets.push('h3precise')
-              }
+            } else if (variant == 'Creative') {
+              optionsSets.push('h3imaginative')
+              optionsSets.push('gencontentv3')
+            } else if (variant == 'Precise') {
+              optionsSets.push('h3precise')
+            }
             const params = {
               arguments: [
                 {
@@ -278,7 +279,9 @@ export class BingChat {
   async createConversation(): Promise<types.ConversationResult> {
     const requestId = crypto.randomUUID()
 
-    const cookie = (this._cookie.includes(';') ? this._cookie : `_U=${this._cookie}`) + `;SRCHHPGUSR=HV=${Math.round(new Date().getTime() / 1e3)}`
+    const cookie =
+      (this._cookie.includes(';') ? this._cookie : `_U=${this._cookie}`) +
+      `;SRCHHPGUSR=HV=${Math.round(new Date().getTime() / 1e3)}`
 
     return fetch('https://www.bing.com/turing/conversation/create', {
       headers: {
@@ -314,7 +317,8 @@ export class BingChat {
       credentials: 'include'
     }).then((res) => {
       if (res.ok) {
-        const conversationSignature = res.headers.get('x-sydney-encryptedconversationsignature') ?? ''
+        const conversationSignature =
+          res.headers.get('x-sydney-encryptedconversationsignature') ?? ''
 
         return res.json().then((res) => {
           return {
